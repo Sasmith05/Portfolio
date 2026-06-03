@@ -7,28 +7,28 @@ const projectsData = [
     num: "01",
     category: "Next.js | PostgreSQL | Prisma",
     name: "LexDesk",
-    desc: "Developed a full-stack legal practice management platform for managing clients, court cases, billing, and legal workflows. Implemented secure authentication, responsive dashboards, and CRUD functionalities using Next.js and Prisma. Designed a modern responsive UI optimized for both desktop and mobile devices.",
-    github: "https://github.com/Sasmith05",
-    live: "https://github.com/Sasmith05",
-    status: "Production Ready"
+    desc: "Legal practice management platform with secure authentication and responsive dashboards.",
+    github: "https://github.com/Sasmith05/LexDesk.git",
+    live: "https://lexdesk-two.vercel.app",
+    status: "Completed"
   },
   {
     num: "02",
     category: "React | Node.js | MySQL",
     name: "ProTrack",
-    desc: "Built a web-based employee project tracking system to manage employee records, project assignments, and progress updates. Developed interactive dashboards for monitoring project status and employee performance efficiently. Integrated MySQL database operations for secure data management and retrieval.",
-    github: "https://github.com/Sasmith05",
-    live: "https://github.com/Sasmith05",
-    status: "Completed"
+    desc: "Productivity and task management platform focused on workflow organization and performance tracking.",
+    github: "https://github.com/Sasmith05/ProTrack.git",
+    live: "",
+    status: "On Progress"
   },
   {
     num: "03",
     category: "Next.js | Framer Motion",
     name: "MovieX",
-    desc: "Supported as a Frontend Developer in building a decentralized movie ticketing platform with a responsive and modern UI. Developed movie booking pages, dashboards, and digital ticket interfaces using Next.js and React. Implemented responsive layouts and smooth animations using Tailwind CSS and Framer Motion.",
-    github: "https://github.com/Sasmith05",
-    live: "https://github.com/Sasmith05",
-    status: "In Progress"
+    desc: "Movie discovery web application with modern UI and dynamic movie browsing experience.",
+    github: "https://github.com/Sasmith05/eth-moviex.git",
+    live: "https://eth-moviex.vercel.app",
+    status: "Completed"
   }
 ];
 
@@ -137,7 +137,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ progress, acti
                   </div>
 
                   {/* Bottom Row: Actions */}
-                  <div className="grid grid-cols-2 gap-3 mt-5">
+                  <div className={`grid ${project.live ? 'grid-cols-2' : 'grid-cols-1'} gap-3 mt-5`}>
                     <a 
                       href={project.github} 
                       target="_blank" 
@@ -148,16 +148,18 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ progress, acti
                         GitHub
                       </button>
                     </a>
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="w-full"
-                    >
-                      <button className="w-full rounded-none border-2 border-[#0C0C0C] bg-white text-[#0C0C0C] font-sans font-bold uppercase tracking-wider py-2.5 text-xs transition-all duration-300 hover:bg-[#0C0C0C] hover:text-white group-hover:border-white group-hover:bg-[#0C0C0C] group-hover:text-white group-hover:hover:bg-white group-hover:hover:text-[#0C0C0C] active:scale-[0.97] flex items-center justify-center cursor-pointer">
-                        Live Demo
-                      </button>
-                    </a>
+                    {project.live && (
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="w-full"
+                      >
+                        <button className="w-full rounded-none border-2 border-[#0C0C0C] bg-white text-[#0C0C0C] font-sans font-bold uppercase tracking-wider py-2.5 text-xs transition-all duration-300 hover:bg-[#0C0C0C] hover:text-white group-hover:border-white group-hover:bg-[#0C0C0C] group-hover:text-white group-hover:hover:bg-white group-hover:hover:text-[#0C0C0C] active:scale-[0.97] flex items-center justify-center cursor-pointer">
+                          Live Demo
+                        </button>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
