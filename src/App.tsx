@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { useScroll, useTransform, motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
@@ -88,6 +89,21 @@ function App() {
           <ServicesSection isActive={activeIndex === 2} />
           <ProjectsSection progress={scrollYProgress} activeIndex={activeIndex} />
           <Footer isActive={activeIndex === 4} />
+        </motion.div>
+      </div>
+
+      {/* Right-Side Scroll Indicator */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-center gap-4 pointer-events-none select-none">
+        <span className="font-sans font-bold text-[9px] tracking-[0.3em] uppercase text-[#0C0C0C]/30 rotate-90 origin-center whitespace-nowrap mb-6">
+          Scroll
+        </span>
+        <motion.div style={{ x: useTransform(scrollYProgress, [0, 1], [0, 16]) }}>
+          <motion.div
+            animate={{ x: [0, 6, 0], opacity: [0.3, 0.9, 0.3] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <ArrowRight className="w-4 h-4 text-[#0C0C0C]/40" />
+          </motion.div>
         </motion.div>
       </div>
     </div>

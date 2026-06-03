@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Github, Linkedin, MapPin } from 'lucide-react';
 import { HoverLetters } from './TextEffects';
@@ -8,6 +8,8 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ isActive }) => {
+  const [copied, setCopied] = useState(false);
+
   const leftBlockVariants = {
     hidden: {},
     visible: {
@@ -45,7 +47,13 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
       title: "Email",
       value: "russelsasmith@gmail.com",
       link: "mailto:russelsasmith@gmail.com",
-      icon: Mail
+      icon: Mail,
+      onClick: (e: React.MouseEvent) => {
+        e.preventDefault();
+        navigator.clipboard.writeText("russelsasmith@gmail.com");
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      }
     },
     {
       title: "Phone",
@@ -123,14 +131,16 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
         >
           {contactCards.map((card) => {
             const Icon = card.icon;
+            const isEmail = card.title === "Email";
             return (
               <motion.a
                 key={card.title}
                 href={card.link}
+                onClick={card.onClick}
                 target={card.title !== "Phone" && card.title !== "Email" ? "_blank" : undefined}
                 rel={card.title !== "Phone" && card.title !== "Email" ? "noopener noreferrer" : undefined}
                 variants={itemVariants}
-                className="border-2 border-[#0C0C0C] bg-white p-5 rounded-none flex flex-col justify-between min-h-[140px] hover:bg-[#0C0C0C] hover:text-white transition-all duration-300 group cursor-pointer shadow-md hover:shadow-2xl active:scale-[0.98] text-left"
+                className="border-2 border-[#0C0C0C] bg-white p-5 rounded-none flex flex-col justify-between min-h-[140px] hover:bg-[#0C0C0C] hover:text-white transition-all duration-300 group cursor-pointer shadow-md hover:shadow-2xl active:scale-[0.98] text-left relative overflow-hidden"
               >
                 {/* Card Top: Title & Icon */}
                 <div className="flex justify-between items-center w-full">
@@ -140,10 +150,18 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
                   <Icon className="w-5 h-5 text-[#0C0C0C] group-hover:text-white transition-colors duration-300" />
                 </div>
 
-                {/* Card Bottom: Value */}
-                <span className="font-sans font-bold text-sm sm:text-base md:text-lg tracking-tight mt-6 block break-words">
-                  {card.value}
-                </span>
+                {/* Card Bottom: Value or Success Message */}
+                <div className="mt-6">
+                  {isEmail && copied ? (
+                    <span className="font-sans font-bold text-xs sm:text-sm uppercase tracking-widest text-[#0C0C0C] group-hover:text-white transition-colors duration-200 block">
+                      copied to clipboard!
+                    </span>
+                  ) : (
+                    <span className="font-sans font-bold text-sm sm:text-base md:text-lg tracking-tight block break-words">
+                      {card.value}
+                    </span>
+                  )}
+                </div>
               </motion.a>
             );
           })}
