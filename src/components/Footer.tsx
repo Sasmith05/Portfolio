@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
     {
       title: "LinkedIn",
       value: "Russel Sasmith",
-      link: "https://linkedin.com",
+      link: "https://www.linkedin.com/in/russel-sasmith",
       icon: Linkedin
     }
   ];
