@@ -128,7 +128,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ isActive }) =>
   return (
     <section 
       id="skills"
-      className="relative h-screen w-screen flex-shrink-0 bg-[#FFFFFF] text-[#0C0C0C] px-6 sm:px-12 md:px-20 py-20 flex items-center justify-center z-0 border-l border-r border-[#0C0C0C]/5"
+      className="relative h-screen w-screen flex-shrink-0 bg-[#FFFFFF] text-[#0C0C0C] px-6 sm:px-12 md:px-20 py-10 md:py-20 flex items-center justify-center z-0 border-l border-r border-[#0C0C0C]/5"
     >
       <div className="max-w-6xl w-full mx-auto flex flex-col justify-center h-full pt-12">
         {/* Heading with Outfit font style (sans-serif bold italic uppercase) */}
@@ -153,7 +153,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ isActive }) =>
             variants={listContainerVariants}
             initial="hidden"
             animate={isActive ? "visible" : "hidden"}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-h-[60vh] overflow-y-auto pr-2 no-scrollbar pb-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-h-[50vh] overflow-y-auto pr-2 no-scrollbar pb-16"
           >
             {servicesData.map((item) => {
               const Icon = item.icon;

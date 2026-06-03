@@ -96,7 +96,7 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ progress, acti
           variants={containerVariants}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-h-[60vh] overflow-y-auto no-scrollbar pb-4"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-h-[50vh] overflow-y-auto no-scrollbar pb-16"
         >
           {projectsData.map((project) => (
             <motion.div
