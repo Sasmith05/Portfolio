@@ -24,6 +24,14 @@ function App() {
       setActiveIndex(index);
     });
   }, [scrollYProgress]);
+
+  // Force scroll to top (first page) on mount / refresh
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
   
   // Translate container horizontally: at progress 1, translation is -400vw (the last screen is in view)
   const x = useTransform(scrollYProgress, [0, 1], ["0vw", "-400vw"]);
