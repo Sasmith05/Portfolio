@@ -53,7 +53,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isActive }) => {
       <div className="w-full flex flex-col-reverse md:flex-row md:items-stretch h-full">
         
         {/* Left Column: Portrait Photo (Still, sitting flush on the left and bottom edges of the screen, completely static) */}
-        <div className="w-full md:w-[45%] flex justify-center md:justify-start items-end h-[48vh] md:h-full pb-6 md:pb-0">
+        <div className="w-full md:w-[45%] flex justify-center md:justify-start items-end h-[48vh] md:h-full pb-12 md:pb-0">
           <div className="h-full flex items-end">
             <img 
               src="/russel.jpg" 
