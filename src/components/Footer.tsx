@@ -127,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
           variants={rightBlockVariants}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className="grid grid-cols-2 gap-3 sm:gap-6 w-full max-w-lg md:max-w-xl"
+          className="grid grid-cols-2 gap-3 sm:gap-6 w-full max-w-lg md:max-w-2xl"
         >
           {contactCards.map((card) => {
             const Icon = card.icon;
@@ -157,7 +157,7 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
                       copied to clipboard!
                     </span>
                   ) : (
-                    <span className="font-sans font-bold text-[10px] xs:text-xs sm:text-base md:text-lg tracking-tight block break-all sm:break-words">
+                    <span className="font-sans font-bold text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg tracking-tighter block break-all lg:break-normal">
                       {card.value}
                     </span>
                   )}
