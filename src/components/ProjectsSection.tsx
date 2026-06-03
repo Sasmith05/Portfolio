@@ -96,13 +96,13 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ progress, acti
           variants={containerVariants}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-h-[50vh] overflow-y-auto no-scrollbar pb-16"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-h-[65vh] md:max-h-none overflow-y-auto md:overflow-visible no-scrollbar pb-12 md:pb-0"
         >
           {projectsData.map((project) => (
             <motion.div
               key={project.num}
               variants={cardVariants}
-              className="border-2 border-[#0C0C0C] bg-[#FFFFFF] p-6 rounded-none flex flex-col justify-between min-h-[390px] h-[50vh] hover:bg-[#0C0C0C] hover:text-white transition-all duration-300 group cursor-default text-left shadow-md hover:shadow-2xl active:scale-[0.98]"
+              className="border-2 border-[#0C0C0C] bg-[#FFFFFF] p-5 sm:p-6 rounded-none flex flex-col justify-between min-h-[360px] sm:min-h-[380px] md:h-full hover:bg-[#0C0C0C] hover:text-white transition-all duration-300 group cursor-default text-left shadow-md hover:shadow-2xl active:scale-[0.98]"
             >
               <div className="flex flex-col h-full justify-between">
                 <div>
