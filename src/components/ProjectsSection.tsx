@@ -9,7 +9,7 @@ const projectsData = [
     name: "LexDesk",
     desc: "Legal practice management platform with secure authentication and responsive dashboards.",
     github: "https://github.com/Sasmith05/LexDesk.git",
-    live: "https://lexdesk-two.vercel.app",
+    live: "https://lexdesk-o.vercel.app",
     status: "Completed"
   },
   {
