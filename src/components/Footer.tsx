@@ -109,12 +109,11 @@ export const Footer: React.FC<FooterProps> = ({ isActive }) => {
             <span>Current Location: Chennai, India</span>
           </motion.div>
 
-          {/* Download Resume Button (matches main Resume outline CTA exactly) */}
           <motion.div 
             variants={itemVariants}
             className="mt-4 md:mt-8 sm:mt-6"
           >
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a href="/resume.pdf" download>
               <button className="rounded-none border-2 border-[#0C0C0C] bg-white text-[#0C0C0C] font-sans font-bold uppercase tracking-widest px-6 py-2.5 sm:px-10 sm:py-3.5 text-[11px] xs:text-xs sm:text-sm hover:bg-[#0C0C0C] hover:text-white transition-all duration-200 shadow-md active:scale-95 flex items-center justify-center cursor-pointer">
                 Download Resume
               </button>
