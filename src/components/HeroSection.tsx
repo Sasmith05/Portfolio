@@ -50,22 +50,22 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isActive }) => {
       id="hero"
       className="h-screen w-screen flex-shrink-0 flex items-center justify-between relative bg-[#FFFFFF] pt-24 pb-0 overflow-hidden"
     >
-      <div className="w-full flex flex-col md:flex-row items-stretch h-full">
+      <div className="w-full flex flex-col-reverse md:flex-row md:items-stretch h-full pt-16 md:pt-0">
         
         {/* Left Column: Portrait Photo (Still, sitting flush on the left and bottom edges of the screen, completely static) */}
-        <div className="w-full md:w-[45%] flex justify-start items-end h-full">
+        <div className="w-full md:w-[45%] flex justify-center md:justify-start items-end h-[42vh] md:h-full">
           <div className="h-full flex items-end">
             <img 
               src="/russel.jpg" 
               alt="Russel Portrait" 
-              className="w-full h-auto max-h-[78vh] md:max-h-[85vh] object-contain select-none"
+              className="h-full w-auto md:w-full md:h-auto max-h-[42vh] md:max-h-[85vh] object-contain select-none"
               draggable="false"
             />
           </div>
         </div>
 
         {/* Right Column: Title & Text content */}
-        <div className="w-full md:w-[55%] flex flex-col justify-center items-start text-left pl-6 pr-8 sm:pr-16 md:pr-24 lg:pr-32 pb-12 md:pb-24">
+        <div className="w-full md:w-[55%] flex flex-col justify-center items-start text-left pl-6 pr-8 sm:pr-16 md:pr-24 lg:pr-32 pb-4 md:pb-24 pt-4 md:pt-0">
           {/* Subheading: Dynamic Role Cycling with scramble animation */}
           <div className="h-6 overflow-hidden relative w-full flex items-center justify-start mb-1.5">
             <AnimatePresence mode="wait">
