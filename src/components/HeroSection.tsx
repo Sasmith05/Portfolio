@@ -121,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ isActive }) => {
 
       {/* Resume Button - Positioned absolutely at the bottom-right corner of the screen */}
       <div className="absolute right-[5%] sm:right-[8%] bottom-[5%] sm:bottom-[8%] z-20 pointer-events-auto">
-        <a href="/sasmith_resume.pdf" download>
+        <a href="/sasmith_resume.pdf" download="sasmith_resume.pdf">
           <button className="rounded-none border-2 border-[#0C0C0C] bg-white text-[#0C0C0C] font-sans font-bold uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm hover:bg-[#0C0C0C] hover:text-white transition-all duration-200 shadow-md active:scale-95 flex items-center justify-center cursor-pointer">
             Resume
           </button>
