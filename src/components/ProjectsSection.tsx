@@ -14,21 +14,30 @@ const projectsData = [
   },
   {
     num: "02",
+    category: "Next.js | TypeScript | Supabase",
+    name: "WARAM",
+    desc: "Developed a full-stack legal services and property management platform using Next.js, TypeScript, Supabase, and PostgreSQL. Features include property listings, event management, customer enquiry handling, a secure admin dashboard with authentication and CRUD operations, bilingual support (English & Tamil), responsive UI, image uploads, and Row-Level Security (RLS) for secure data management.",
+    github: "https://github.com/Sasmith05/Waram.git",
+    live: "https://waramdocumentation.vercel.app/",
+    status: "Completed"
+  },
+  {
+    num: "03",
+    category: "Next.js | Framer Motion",
+    name: "MoviEx",
+    desc: "Movie discovery web application with modern UI and dynamic movie browsing experience.",
+    github: "https://github.com/Sasmith05/eth-moviex.git",
+    live: "https://eth-moviex.vercel.app",
+    status: "Completed"
+  },
+  {
+    num: "04",
     category: "React | Node.js | MySQL",
     name: "ProTrack",
     desc: "Productivity and task management platform focused on workflow organization and performance tracking.",
     github: "https://github.com/Sasmith05/ProTrack.git",
     live: "",
     status: "On Progress"
-  },
-  {
-    num: "03",
-    category: "Next.js | Framer Motion",
-    name: "MovieX",
-    desc: "Movie discovery web application with modern UI and dynamic movie browsing experience.",
-    github: "https://github.com/Sasmith05/eth-moviex.git",
-    live: "https://eth-moviex.vercel.app",
-    status: "Completed"
   }
 ];
 
@@ -91,12 +100,12 @@ export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ progress, acti
           </h2>
         </motion.div>
 
-        {/* 3-Column Project Grid */}
+        {/* 4-Column Project Grid */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           animate={isActive ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 w-full max-h-[65vh] md:max-h-none overflow-y-auto md:overflow-visible no-scrollbar pb-12 md:pb-0"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 w-full max-h-[65vh] md:max-h-none overflow-y-auto md:overflow-visible no-scrollbar pb-12 md:pb-0"
         >
           {projectsData.map((project) => (
             <motion.div
